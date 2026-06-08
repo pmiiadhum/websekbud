@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori Kultur - Sekolah Kajian Budaya</title>
+    <style>
+        /* =========================================
+           VARIABEL WARNA & RESET (mengikuti tema Kultur)
+           ========================================= */
+        :root {
+            --brand-red: #c0172e;
+            --text-dark: #2c2520; /* Hitam Kecokelatan */
+            --text-gray: #7c7267; /* Abu Tanah */
+            --bg-light: #faf8f5;  /* Krem Lembut */
+            --border-color: #ebdcd0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            font-family: 'Georgia', serif; 
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================================
+           HEADER LOGO (Tetap sinkron dengan Beranda)
+           ========================================= */
+        .main-header {
+            text-align: center;
+            padding: 20px 10px;
+            border-bottom: 1px solid var(--border-color);
+            background: white;
+            font-family: Arial, Helvetica, sans-serif; /* Kembalikan font header ke sans-serif */
+        }
+
+        .logo-link {
+            display: inline-block;
+        }
+
+        .logo-placeholder {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .logo-placeholder span {
+            color: var(--brand-red);
+        }
+
+        .logo-tagline {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-top: 5px;
+        }
+
+        .site-logo {
+            height: 128px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* =========================================
+           LAYOUT BLOG GAYA BLOGSPOT LITERASI
+           ========================================= */
+        .blog-wrapper {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        /* Kolom Kiri Tulisan */
+        .content-posts {
+            flex: 7;
+            background: white;
+            padding: 35px;
+            border: 1px solid var(--border-color);
+            border-radius: 2px;
+        }
+
+        .culture-heading {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-gray);
+            margin-bottom: 35px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .empty-notice {
+            text-align: center;
+            padding: 40px 10px;
+        }
+
+        .empty-notice p {
+            font-style: italic;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        /* Tombol Balik Beranda Gaya Vintage */
+        .back-link-classic {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8rem;
+            color: var(--brand-red);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px dashed var(--brand-red);
+            padding-bottom: 3px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .back-link-classic:hover {
+            color: #333;
+            border-color: #333;
+        }
+
+        /* Kolom Kanan Sidebar */
+        .sidebar-panel {
+            flex: 3;
+        }
+
+        .sidebar-box {
+            background: white;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 25px;
+            border-radius: 2px;
+        }
+
+        .sidebar-box h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            border-left: 3px solid var(--brand-red);
+            padding-left: 8px;
+        }
+
+        .sidebar-text {
+            font-size: 0.85rem;
+            color: #5c5247;
+            font-style: italic;
+        }
+
+        /* Responsif HP */
+        @media (max-width: 768px) {
+            .blog-wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Sinkron dengan Beranda (Bisa diklik kembali ke Home) -->
+    <header class="main-header">
+        <a href="../index.html" class="logo-link">
+            <div class="logo-placeholder">
+                <img src="../assets/logo.png" alt="Logo Sekolah Kajian Budaya" class="site-logo">
+                <span>SEKOLAH</span>KAJIAN BUDAYA
+            </div>
+        </a>
+        <div class="logo-tagline">Pendidikan tidak mengubah dunia. Pendidikan mengubah manusia dan manusialah yang mengubah dunia.</div>
+    </header>
+
+    <!-- Layout Blogspot Kultural -->
+    <div class="blog-wrapper">
+        
+        <!-- Sisi Kiri: Ruang Arsip Kebudayaan -->
+        <main class="content-posts">
+            <div class="culture-heading">Kajian: politik </div>
+            
+            <div class="empty-notice">
+                <p>coming soon</p>
+                <a href="../index.html" class="back-link-classic">« Kembali ke Beranda</a>
+            </div>
+        </main>
+
+        <!-- Sisi Kanan: Deskripsi Singkat Lokus -->
+        <aside class="sidebar-panel">
+            <div class="sidebar-box">
+                <h3>Catatan Ruang</h3>
+                <p class="sidebar-text">
+                    Coming soon.
+                </p>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>
