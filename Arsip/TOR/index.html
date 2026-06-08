@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Term of Reference (TOR) - Sekolah Kajian Budaya</title>
+    <style>
+        /* =========================================
+           VARIABEL WARNA & RESET DASAR (Sesuai Beranda)
+           ========================================= */
+        :root {
+            --brand-red: #c0172e;
+            --text-dark: #333;
+            --text-gray: #666;
+            --bg-light: #f5f5f5;
+            --border-color: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================================
+           HEADER LOGO (Sinkron dengan Beranda Utama)
+           ========================================= */
+        .main-header {
+            text-align: center;
+            padding: 20px 10px;
+            border-bottom: 1px solid var(--border-color);
+            background: white;
+        }
+
+        .logo-placeholder {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .logo-placeholder span {
+            color: var(--brand-red);
+        }
+
+        .logo-tagline {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-top: 5px;
+        }
+
+        .site-logo {
+            height: 128px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* =========================================
+           KONTEN UTAMA DOKUMEN TOR
+           ========================================= */
+        .document-container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .doc-header {
+            text-align: center;
+            border-bottom: 2px solid var(--brand-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .doc-header h2 {
+            font-size: 1.6rem;
+            color: var(--brand-red);
+            margin-bottom: 5px;
+        }
+
+        .doc-header p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            font-weight: bold;
+        }
+
+        .meta-info-box {
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--brand-red);
+            padding: 15px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        .meta-info-box table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .meta-info-box td {
+            padding: 4px 8px;
+            vertical-align: top;
+        }
+
+        .meta-info-box td.label {
+            font-weight: bold;
+            width: 120px;
+        }
+
+        /* Pembagian Bab Dokumentasi */
+        .doc-section {
+            margin-bottom: 25px;
+        }
+
+        .doc-section h3 {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            border-left: 3px solid var(--brand-red);
+            padding-left: 10px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .doc-section p {
+            font-size: 0.95rem;
+            color: #444;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .doc-section ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .doc-section ul li {
+            margin-bottom: 6px;
+        }
+
+        /* =========================================
+           WIDGET DOWNLOAD GOOGLE DRIVE
+           ========================================= */
+        .download-box {
+            background-color: #fff9fa;
+            border: 1px dashed var(--brand-red);
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 4px;
+        }
+
+        .download-box p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--brand-red);
+            color: white !important;
+            padding: 12px 30px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: #951222;
+        }
+
+        .back-nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-nav a {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            border-bottom: 1px solid var(--text-gray);
+            padding-bottom: 2px;
+        }
+
+        .back-nav a:hover {
+            color: var(--brand-red);
+            border-color: var(--brand-red);
+        }
+
+        /* Responsif Layar Kecil */
+        @media (max-width: 768px) {
+            .document-container {
+                padding: 20px;
+                margin: 20px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Sinkron dengan Halaman Utama -->
+    <header class="main-header">
+        <a href="../../index.html">
+            <div class="logo-placeholder">
+                <img src="../../assets/logo.png" alt="Logo Sekolah Kajian Budaya" class="site-logo">
+                <span>SEKOLAH</span>KAJIAN BUDAYA
+            </div>
+        </a>
+        <div class="logo-tagline">Pendidikan tidak mengubah dunia. Pendidikan mengubah manusia dan manusialah yang mengubah dunia.</div>
+    </header>
+
+    <!-- Kontainer Surat Dokumen TOR -->
+    <div class="document-container">
+        
+        <div class="doc-header">
+            <h2>TERM OF REFERENCE (TOR) UMUM</h2>
+            <p>PANITIA PELAKSANA SEKOLAH KAJIAN BUDAYA (SEKBUD)</p>
+        </div>
+
+        <!-- Detail Informasi Kegiatan -->
+        <div class="meta-info-box">
+            <table>
+                <tr>
+                    <td class="label">Tema Kegiatan</td>
+                    <td>: "Von der Tradition zur Innovation"</td>
+                </tr>
+                <tr>
+                    <td class="label">Waktu Pelaksanaan</td>
+                    <td>: Kamis s.d Minggu, 18 s.d 21 Juni 2026</td>
+                </tr>
+                <tr>
+                    <td class="label">Tempat Kegiatan</td>
+                    <td>: Buruan Manglayang</td>
+                </tr>
+                <tr>
+                    <td class="label">Penyelenggara</td>
+                    <td>: PMII Rayon Fakultas Adab dan Humaniora, Komisariat UIN Sunan Gunung Djati Bandung</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Isi TOR Umum -->
+        <section class="doc-section">
+            <h3>Latar Pemikiran</h3>
+            <p>Perubahan sosial yang berlangsung secara cepat dalam beberapa dekade terakhir telah membawa dampak besar terhadap cara masyarakat memahami budaya, identitas, pengetahuan, hingga relasi sosial. Budaya hari ini tidak lagi bergerak dalam ruang yang stabil dan tradisional, melainkan mengalami transformasi akibat perkembangan teknologi digital, arus globalisasi, kapitalisme media, dan perubahan pola komunikasi masyarakat.</p>
+            <p>Dalam kondisi demikian, budaya tidak hanya menjadi ekspresi nilai dan tradisi, tetapi juga menjadi arena perebutan pengaruh, kepentingan ekonomi, bahkan kuasa politik. Memahami budaya kritis dipandang sebagai hasil cipta, rasa, dan karsa manusia yang membentuk keseluruhan sistem kehidupan masyarakat yang mencakup gagasan, aktivitas sosial, hingga hasil karya manusia yang saling berkaitan membentuk struktur kehidupan masyarakat.</p>
+        </section>
+
+        <section class="doc-section">
+            <h3>Tujuan & Orientasi Kegiatan (Input)</h3>
+            <ul>
+                <li>Mengembangkan tradisi intelektual kader berbasis kajian budaya kritis.</li>
+                <li>Membentuk kemampuan analisis sosial terhadap fenomena budaya kontemporer.</li>
+                <li>Mendorong kader menghasilkan karya akademik dan riset budaya.</li>
+                <li>Menghubungkan teori budaya dengan praksis gerakan mahasiswa.</li>
+                <li>Menumbuhkan kesadaran humanistik, emansipatoris, dan transformatif.</li>
+            </ul>
+        </section>
+
+        <section class="doc-section">
+            <h3>Materi Kajian Utama</h3>
+            <ul>
+                <li>Metodologi Kepenulisan yang Baik.</li>
+                <li>Ilmu Budaya Dasar.</li>
+                <li>Materialisme Dialektika Historis (MDH) sebagai Alat Memahami Transisi Zaman.</li>
+                <li>Memahami Encoding-Decoding dalam Pop Culture (Stuart Hall).</li>
+                <li>Agitasi dan Propaganda Media sebagai Anti-tesis Simulacra & Hiperrealitas Dunia Modern (Baudrillard).</li>
+                <li>Analisis Kebijakan Kampus dalam Kacamata Bourdieu untuk Membentuk Habitus Mahasiswa.</li>
+            </ul>
+        </section>
+
+        <!-- Box Aksi Download Sesuai Arahan Kang Nabhan -->
+        <div class="download-box">
+            <p>Untuk mendapatkan berkas panduan lengkap silakan unduh dokumen di bawah ini:</p>
+            <a href="https://drive.google.com/file/d/1s03IFtSxE4Q1oj_ESkZvDBIO17EZdCi_/view?usp=sharing" target="_blank" class="btn-download">
+                📥 Download TOR Lengkap (.PDF)
+            </a>
+        </div>
+
+        <div class="back-nav">
+            <a href="../../index.html">« Kembali ke Beranda Utama</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
