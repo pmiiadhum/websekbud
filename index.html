@@ -6,7 +6,7 @@
     <title>Sekolah Kajian Budaya - UI Clone</title>
     <style>
         /* =========================================
-           VARIABEL WARNA & RESET DASAR
+            VARIABEL WARNA & RESET DASAR
            ========================================= */
         :root {
             --brand-red: #c0172e; /* Warna merah khas web */
@@ -14,6 +14,7 @@
             --text-gray: #666;
             --bg-light: #f5f5f5;
             --border-color: #ddd;
+            --bg-krem: #faf8f5; /* Krem lembut kesukaan temanmu */
         }
 
         * {
@@ -33,8 +34,71 @@
             color: inherit;
         }
 
+        /* =========================================================================
+           [ TAMBAHAN CSS BARU: KOTAK FEED BULETIN GAYA BLOGSPOT/WORDPRESS ]
+           ========================================================================= */
+        .bulletin-feed-card {
+            background: white;
+            padding: 25px;
+            border: 1px solid #ebdcd0; /* Garis pembatas krem serasi */
+            border-radius: 2px;
+            margin-bottom: 40px;
+            font-family: 'Georgia', serif; /* Jiwa klasiknya blog literasi */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .feed-category {
+            color: var(--brand-red);
+            font-family: Arial, sans-serif;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .feed-title {
+            font-size: 1.6rem;
+            margin: 8px 0 12px 0;
+            line-height: 1.3;
+            color: #2c2520; /* Hitam kecokelatan */
+            font-weight: bold;
+        }
+
+        .feed-title a:hover {
+            color: var(--brand-red);
+        }
+
+        .feed-snippet {
+            font-size: 0.95rem;
+            color: #5c5247; /* Abu tanah hangat */
+            margin-bottom: 18px;
+            text-align: justify;
+            line-height: 1.6;
+            font-family: 'Georgia', serif;
+        }
+
+        .feed-readmore {
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
+            color: var(--brand-red);
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px dashed var(--brand-red);
+            padding-bottom: 2px;
+            transition: all 0.2s;
+        }
+
+        .feed-readmore:hover {
+            color: #2c2520;
+            border-color: #2c2520;
+        }
+        /* =========================================================================
+           [ AKHIR TAMBAHAN CSS BARU ]
+           ========================================================================= */
+
         /* =========================================
-           HEADER LOGO
+            HEADER LOGO
            ========================================= */
         .main-header {
             text-align: center;
@@ -63,13 +127,13 @@
         }
 
         .site-logo {
-        height: 128px; /* Atur tinggi logo sesuai kebutuhan */
-        width: auto;  /* Lebar otomatis proporsional */
-        object-fit: contain;
-}
+            height: 128px; /* Atur tinggi logo sesuai kebutuhan */
+            width: auto;  /* Lebar otomatis proporsional */
+            object-fit: contain;
+        }
 
         /* =========================================
-           TOP BAR (Navigasi Atas)
+            TOP BAR (Navigasi Atas)
            ========================================= */
         .top-bar {
             display: flex;
@@ -123,7 +187,7 @@
         }
 
         /* =========================================
-           SIDEBAR MENU (Off-Canvas Murni CSS)
+            SIDEBAR MENU (Off-Canvas Murni CSS)
            ========================================= */
         /* Menyembunyikan checkbox trigger */
         #menu-toggle {
@@ -198,7 +262,7 @@
         }
 
         /* =========================================
-           KONTEN UTAMA
+            KONTEN UTAMA
            ========================================= */
         .main-content {
             padding: 20px;
@@ -244,8 +308,7 @@
         }
 
         /* =========================================================================
-           [ BAGIAN YANG DIEDIT : CSS FOOTER BARU GAYA HISTORIA ]
-           CSS lama yang bernama .site-footer dihapus dan diganti dengan ini.
+            [ CSS FOOTER BARU GAYA HISTORIA ]
            ========================================================================= */
         .custom-footer {
             background-color: #333333; /* Warna latar gelap */
@@ -368,9 +431,6 @@
                 gap: 20px;
             }
         }
-        /* =========================================================================
-           [ AKHIR BAGIAN YANG DIEDIT: CSS ]
-           ========================================================================= */
     </style>
 </head>
 <body>
@@ -411,7 +471,6 @@
                     <li><a href="#">Vidio</a></li>
                 </ul>
             </li>
-            <!-- Catatan: Posisi <li> Lainnya yang sebelumnya di luar <ul> sudah aku rapikan masuk ke sini -->
             <li>
                 <a href="#" class="main-link">Lainnya <span>&#709;</span></a>
                 <ul class="sidebar-submenu">
@@ -442,6 +501,17 @@
     </div>
 
     <main class="main-content">
+        
+        <article class="bulletin-feed-card">
+            <span class="feed-category">BULETIN PERDANA</span>
+            <h2 class="feed-title">
+                <a href="lainnya/buletin/10-06-2026.html">Suara Kebudayaan: Menakar Arah Literasi Digital di Era Modern</a>
+            </h2>
+            <p class="feed-snippet">
+                Pendidikan dan kebudayaan adalah dua roda yang menggerakkan peradaban manusia. Dalam edisi buletin perdana 10 Juni 2026 ini, Sekolah Kajian Budaya mencoba membedah bagaimana tantangan generasi muda dalam menjaga warisan literasi di tengah gempuran zaman...
+            </p>
+            <a href="lainnya/buletin/10-06-2026.html" class="feed-readmore">Read More »</a>
+        </article>
         <div class="section-label">AGENDA</div>
         
         <div class="poster-grid">
@@ -450,19 +520,13 @@
         </div>
     </main>
 
-    <!-- =========================================================================
-         [ BAGIAN YANG DIEDIT : HTML FOOTER BARU ]
-         Tag <footer class="site-footer"> lamamu dihapus dan diganti semua dengan ini
-         ========================================================================= -->
     <footer class="custom-footer">
         <div class="footer-container">
             
-            <!-- Logo Footer -->
             <div class="footer-logo">
-    <img src="./assets/logo.png" alt="Logo Sekbud Bawah" style="height: 60px; width: auto;">
-        </div>
+                <img src="./assets/logo.png" alt="Logo Sekbud Bawah" style="height: 60px; width: auto;">
+            </div>
     
-            <!-- Bagian Atas (Sama dengan permintaan gambar) -->
             <ul class="footer-top-links">
                 <li><a href="#">Tentang Kami</a></li>
                 <li><a href="#">Syarat & Ketentuan</a></li>
@@ -470,7 +534,6 @@
                 <li><a href="#">Kebijakan Privasi</a></li>
             </ul>
     
-            <!-- Bagian Tengah (Ganti) -->
             <div class="footer-categories">
                 <div class="cat-col">
                     <h4><a href="#" style="color: white; text-decoration: none;">Home</a></h4>
@@ -518,7 +581,6 @@
                 </div>
             </div>
     
-            <!-- Bagian Bawah (Sama dengan permintaan gambar) -->
             <div class="footer-bottom-links">
                 <a href="#">Kerjasama & Portofolio</a>
                 <a href="#">Undangan Menulis</a>
@@ -527,7 +589,6 @@
                 <a href="#" class="btn-pmii">PMII ADHUM</a>
             </div>
     
-            <!-- Ikon Sosial Media & Copyright -->
             <div class="footer-social">
                 <span>📷</span> <span></span> <span>▶️</span> <span>📘</span> <span></span>
             </div>
@@ -538,9 +599,6 @@
     
         </div>
     </footer>
-    <!-- =========================================================================
-         [ AKHIR BAGIAN YANG DIEDIT: HTML FOOTER ]
-         ========================================================================= -->
 
 </body>
 </html>
