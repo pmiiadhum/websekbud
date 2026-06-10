@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran SEKBUD 2026 - Sekolah Kajian Budaya</title>
+    <style>
+        /* =========================================
+           VARIABEL WARNA & RESET DASAR (Sesuai Beranda)
+           ========================================= */
+        :root {
+            --brand-red: #c0172e; /* Warna merah khas web Sekbud */
+            --text-dark: #333;
+            --text-gray: #666;
+            --bg-light: #f5f5f5;
+            --border-color: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: #fafafa;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================================
+           HEADER LOGO (Sinkron ke Beranda Utama)
+           ========================================= */
+        .main-header {
+            text-align: center;
+            padding: 20px 10px;
+            border-bottom: 1px solid var(--border-color);
+            background: white;
+        }
+
+        .logo-link {
+            display: inline-block;
+        }
+
+        .logo-placeholder {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .logo-placeholder span {
+            color: var(--brand-red);
+        }
+
+        .logo-tagline {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-top: 5px;
+        }
+
+        .site-logo {
+            height: 128px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* =========================================
+           KONTEN UTAMA PENDAFTARAN (Dua Kolom)
+           ========================================= */
+        .page-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr; /* Kiri info, Kanan Pamflet */
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Kolom Kiri: Informasi */
+        .info-section {
+            background: white;
+            padding: 35px;
+            border: 1px solid var(--border-color);
+            border-radius: 3px;
+        }
+
+        .info-section p.intro-text {
+            font-size: 1rem;
+            color: #444;
+            text-align: justify;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--brand-red);
+            padding-left: 15px;
+        }
+
+        .section-block {
+            margin-bottom: 25px;
+        }
+
+        .section-block h3 {
+            font-size: 1.1rem;
+            color: var(--brand-red);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .section-block ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        .section-block ul li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .section-block ul li span.title {
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* Box Rekening Pembayaran */
+        .payment-box {
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .payment-box strong {
+            color: var(--brand-red);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Tombol G-Form Utama */
+        .cta-container {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .btn-register {
+            display: inline-block;
+            background-color: var(--brand-red);
+            color: white !important;
+            padding: 14px 35px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px rgba(192, 23, 46, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .btn-register:hover {
+            background-color: #951222;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(192, 23, 46, 0.3);
+        }
+
+        /* Kolom Kanan: Pamflet */
+        .pamphlet-section {
+            position: sticky;
+            top: 90px;
+            text-align: center;
+        }
+
+        .pamphlet-img {
+            width: 100%;
+            max-width: 480px;
+            height: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .back-to-home {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        .back-to-home a {
+            color: var(--text-gray);
+            border-bottom: 1px solid var(--text-gray);
+            padding-bottom: 2px;
+        }
+
+        .back-to-home a:hover {
+            color: var(--brand-red);
+            border-color: var(--brand-red);
+        }
+
+        /* Responsive Layar HP */
+        @media (max-width: 900px) {
+            .page-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .pamphlet-section {
+                position: static;
+                order: -1; /* Pamflet muncul di atas jika dibuka di HP */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Resmi Sekbud -->
+    <header class="main-header">
+        <a href="../index.html" class="logo-link">
+            <div class="logo-placeholder">
+                <img src="../assets/logo.png" alt="Logo Sekolah Kajian Budaya" class="site-logo">
+                <span>SEKOLAH</span>KAJIAN BUDAYA
+            </div>
+        </a>
+        <div class="logo-tagline">Pendidikan tidak mengubah dunia. Pendidikan mengubah manusia dan manusialah yang mengubah dunia.</div>
+    </header>
+
+    <!-- Kontainer Alur Registrasi -->
+    <div class="page-container">
+        
+        <!-- Sisi Kiri: Deskripsi & Informasi Alur Teknis -->
+        <main class="info-section">
+            <p class="intro-text">
+                Kebudayaan adalah cermin peradaban. Sebuah jembatan yang menghubungkan nilai-nilai luhur masa lalu dengan proyeksi masa depan. Sebagai insan akademis yang mengemban amanah intelektual sekaligus spiritual, memahami dinamika sosial-budaya bukan sekadar pilihan literasi, melainkan sebuah tanggung jawab moral untuk merawat nalar kritis di tengah derasnya arus zaman. Dengan tema "Von der Tradition zur Innovation" (Dari Tradisi Menuju Inovasi), Sekolah Kajian Budaya (SEKBUD) hadir sebagai ruang dialektika yang inklusif dan mendalam.
+            </p>
+
+            <!-- Blok Timeline -->
+            <div class="section-block">
+                <h3>🕰️ Timeline Kegiatan</h3>
+                <ul>
+                    <li><span class="title">Pendaftaran:</span> <span>08 – 12 Juni 2026</span></li>
+                    <li><span class="title">Pra-Sekbud:</span> <span>13 – 15 Juni 2026</span></li>
+                    <li><span class="title">Wawancara / Screening:</span> <span>16 – 17 Juni 2026</span></li>
+                    <li><span class="title">Pelaksanaan SEKBUD:</span> <span>18 – 21 Juni 2026</span></li>
+                </ul>
+            </div>
+
+            <!-- Blok HTM -->
+            <div class="section-block">
+                <h3>💰 Harga Tiket Masuk (HTM)</h3>
+                <ul>
+                    <li><span class="title">Peserta Internal:</span> <span>Rp 50.000</span></li>
+                    <li><span class="title">Peserta Eksternal:</span> <span>Rp 50.000</span></li>
+                </ul>
+            </div>
+
+            <!-- Blok Pembayaran -->
+            <div class="section-block">
+                <h3>💳 Saluran Pembayaran</h3>
+                <div class="payment-box">
+                    <strong>Bank BSI</strong>
+                    No. Rekening : 7270716398
+                </div>
+                <div class="payment-box">
+                    <strong>Digital Wallet DANA</strong>
+                    No. Rekening / HP : +62 89699045404
+                </div>
+            </div>
+
+            <!-- Blok Konfirmasi -->
+            <div class="section-block">
+                <h3>📞 Konfirmasi Pembayaran</h3>
+                <ul>
+                    <li><span class="title">Narahubung (Tebi Deliana):</span> <span>089699045404</span></li>
+                </ul>
+            </div>
+
+            <!-- Tombol Pengisian Google Form -->
+            <div class="cta-container">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScl0hTObVcDJeUyr25xJkFasYtUuzE_wBl54x5W9lJM7oyKOA/viewform?usp=header" target="_blank" class="btn-register">
+                    🧲 Isi Formulir Pendaftaran Sekarang
+                </a>
+            </div>
+
+            <div class="back-to-home">
+                <a href="../index.html">« Kembali ke Beranda Utama</a>
+            </div>
+        </main>
+
+        <!-- Sisi Kanan: Penempatan File Pamflet -->
+        <aside class="pamphlet-section">
+            <!-- Menunjuk langsung ke folder pengumuman/assets/famplet-pendaftaran.png -->
+            <img src="assets/famplet-pendaftaran.jpeg" alt="Pamflet Pendaftaran Sekolah Kajian Budaya 2026" class="pamphlet-img">
+        </aside>
+
+    </div>
+    
+</body>
+</html>
