@@ -3,261 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kategori Teknologi - Sekolah Kajian Budaya</title>
+    <title>Teknologi - Sekolah Kajian Budaya</title>
     <style>
         /* =========================================
-           VARIABEL WARNA & RESET (100% Sesuai)
+            VARIABEL WARNA & RESET DASAR
            ========================================= */
         :root {
             --brand-red: #c0172e;
-            --text-dark: #2c2520; /* Hitam Kecokelatan */
-            --text-gray: #7c7267; /* Abu Tanah */
-            --bg-light: #faf8f5;  /* Krem Lembut */
-            --border-color: #ebdcd0;
+            --text-dark: #333;
+            --text-gray: #666;
+            --bg-light: #f5f5f5;
+            --border-color: #ddd;
+            --bg-krem: #faf8f5; 
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+        body { color: var(--text-dark); overflow-x: hidden; background-color: var(--bg-krem); }
+        a { text-decoration: none; color: inherit; }
 
-        body {
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            font-family: 'Georgia', serif; 
-            line-height: 1.6;
+        /* =========================================================================
+           [ KOTAK FEED BULETIN GAYA BLOGSPOT/WORDPRESS ]
+           ========================================================================= */
+        .bulletin-feed-card {
+            background: white; padding: 25px; border: 1px solid #ebdcd0; border-radius: 2px;
+            margin-bottom: 40px; font-family: 'Georgia', serif; box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* =========================================
-           HEADER LOGO (Sesuai Beranda + Kultur)
-           ========================================= */
-        .main-header {
-            text-align: center;
-            padding: 20px 10px;
-            border-bottom: 1px solid var(--border-color);
-            background: white;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .logo-link {
-            display: inline-block;
-        }
-
-        .logo-placeholder {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .logo-placeholder span {
-            color: var(--brand-red);
-        }
-
-        .logo-tagline {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            margin-top: 5px;
-        }
-
-        /* UKURAN LOGO DIUBAH JADI 128PX (SAMA DENGAN KULTUR) */
-        .site-logo {
-            height: 128px;
-            width: auto;
-            object-fit: contain;
-        }
+        .feed-category { color: var(--brand-red); font-family: Arial, sans-serif; font-size: 0.75rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+        .feed-title { font-size: 1.6rem; margin: 8px 0 12px 0; line-height: 1.3; color: #2c2520; font-weight: bold; }
+        .feed-title a:hover { color: var(--brand-red); }
+        .feed-snippet { font-size: 0.95rem; color: #5c5247; margin-bottom: 18px; text-align: justify; line-height: 1.6; font-family: 'Georgia', serif; }
+        .feed-readmore { display: inline-block; font-family: Arial, sans-serif; font-size: 0.8rem; color: var(--brand-red); font-weight: bold; text-transform: uppercase; border-bottom: 1px dashed var(--brand-red); padding-bottom: 2px; transition: all 0.2s; }
+        .feed-readmore:hover { color: #2c2520; border-color: #2c2520; }
 
         /* =========================================
-           LAYOUT EDITORIAL (TEMA KREM KULTURAL)
+            HEADER, NAVIGASI, & SIDEBAR
            ========================================= */
-        .blog-wrapper {
-            max-width: 1100px;
-            margin: 40px auto;
-            display: flex;
-            gap: 40px;
-            padding: 0 20px;
-        }
+        .main-header { text-align: center; padding: 20px 10px; border-bottom: 1px solid var(--border-color); background: white; }
+        .logo-placeholder { font-size: 1.8rem; font-weight: bold; color: var(--text-dark); display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .logo-placeholder span { color: var(--brand-red); }
+        .logo-tagline { font-size: 0.9rem; color: var(--text-gray); margin-top: 5px; }
+        .site-logo { height: 128px; width: auto; object-fit: contain; }
 
-        /* Kolom Kiri Utama */
-        .content-posts {
-            flex: 7;
-            background: white;
-            padding: 35px;
-            border: 1px solid var(--border-color);
-            border-radius: 2px;
-        }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: white; z-index: 100; }
+        .hamburger-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 2px solid var(--text-dark); background: white; font-size: 24px; cursor: pointer; border-radius: 3px; }
+        .google-btn { display: flex; align-items: center; gap: 10px; border: 1px solid var(--border-color); padding: 8px 15px; border-radius: 4px; font-size: 0.85rem; color: #1a73e8; background: white; cursor: pointer; }
+        .google-btn img { width: 15px; }
+        .search-icon { font-size: 1.5rem; cursor: pointer; font-weight: bold; }
 
-        .culture-heading {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-gray);
-            margin-bottom: 35px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
-        }
+        #menu-toggle { display: none; }
+        .sidebar { position: fixed; top: 0; left: -300px; width: 250px; height: 100vh; background-color: var(--bg-light); box-shadow: 2px 0 5px rgba(0,0,0,0.1); transition: left 0.3s ease; z-index: 999; overflow-y: auto; border-right: 2px solid var(--border-color); }
+        #menu-toggle:checked ~ .sidebar { left: 0; }
+        .close-btn { display: block; width: 40px; height: 40px; border: 2px solid var(--text-dark); text-align: center; line-height: 36px; font-size: 20px; margin: 10px; cursor: pointer; background: white; }
+        
+        .sidebar-menu { list-style: none; padding: 10px 20px; }
+        .sidebar-menu li { margin-bottom: 15px; }
+        .sidebar-menu a.main-link { font-weight: bold; color: var(--brand-red); font-size: 1.1rem; display: flex; justify-content: space-between; }
+        .sidebar-submenu { list-style: none; padding-left: 15px; margin-top: 10px; }
+        .sidebar-submenu li { margin-bottom: 12px; font-size: 0.95rem; font-weight: 500; }
+        .sidebar-submenu a:hover { color: var(--brand-red); }
 
-        /* Pembungkus Artikel */
-        .editorial-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 45px;
-        }
+        .main-content { padding: 20px; max-width: 1200px; margin: 0 auto; }
+        .section-label { color: var(--brand-red); font-weight: bold; font-size: 1.2rem; margin-bottom: 25px; text-transform: uppercase; border-bottom: 2px solid var(--brand-red); display: inline-block; padding-bottom: 5px;}
 
-        .magazine-card {
-            display: block;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 35px;
-        }
+        /* =========================================
+            FOOTER GAYA HISTORIA
+           ========================================= */
+        .custom-footer { background-color: #333333; color: #ffffff; padding: 50px 20px 20px 20px; margin-top: 50px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+        .footer-logo { font-size: 2rem; font-weight: bold; margin-bottom: 20px; font-family: 'Times New Roman', Times, serif; }
+        .footer-logo span { color: #c0172e; }
+        .footer-top-links { list-style: none; padding: 0; margin-bottom: 30px; }
+        .footer-top-links li { margin-bottom: 12px; }
+        .footer-top-links a { color: #e0e0e0; font-size: 1rem; transition: color 0.3s; }
+        .footer-top-links a:hover { color: #ffffff; }
+        .footer-categories { display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; border-top: 1px solid #555; border-bottom: 1px solid #555; padding: 30px 0; }
+        .cat-col { flex: 1; min-width: 140px; }
+        .cat-col h4 { font-size: 1rem; margin-bottom: 15px; font-weight: bold; color: #ffffff; }
+        .cat-col ul { list-style: none; padding: 0; }
+        .cat-col ul li { margin-bottom: 8px; }
+        .cat-col ul a { color: #bbbbbb; font-size: 0.9rem; }
+        .cat-col ul a:hover { color: #ffffff; }
+        .footer-bottom-links { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 30px; font-size: 0.9rem; }
+        .footer-bottom-links a { color: #e0e0e0; }
+        .btn-pmii { background-color: #ffffff; color: #333333 !important; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; }
+        .footer-social { display: flex; gap: 15px; margin-bottom: 20px; font-size: 1.2rem; }
+        .footer-copyright { color: #888888; font-size: 0.8rem; }
 
-        .post-label {
-            color: var(--brand-red);
-            font-family: Arial, sans-serif;
-            font-size: 0.75rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        .post-title {
-            font-size: 1.6rem;
-            font-weight: bold;
-            line-height: 1.3;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-        }
-
-        .magazine-card:hover .post-title {
-            color: var(--brand-red);
-        }
-
-        /* Kotak Gambar Artikel */
-        .post-cover {
-            width: 100%;
-            height: 240px;
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-gray);
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-
-        /* Teks Dua Kolom Koran */
-        .post-snippet {
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            column-count: 2;
-            column-gap: 20px;
-            text-align: justify;
-        }
-
-        /* Kolom Kanan (Sidebar Catatan Ruang) */
-        .sidebar-panel {
-            flex: 3;
-        }
-
-        .sidebar-box {
-            background: white;
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 2px;
-        }
-
-        .sidebar-box h3 {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-gray);
-            margin-bottom: 15px;
-            border-left: 3px solid var(--brand-red);
-            padding-left: 8px;
-        }
-
-        .sidebar-text {
-            font-size: 0.85rem;
-            color: #5c5247;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .back-link-classic {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.8rem;
-            color: var(--brand-red);
-            font-weight: bold;
-            text-transform: uppercase;
-            border-bottom: 1px dashed var(--brand-red);
-            padding-bottom: 3px;
-        }
-
-        /* Responsif HP */
         @media (max-width: 768px) {
-            .blog-wrapper {
-                flex-direction: column;
-            }
-            .post-snippet {
-                column-count: 1;
-            }
+            .footer-categories { flex-direction: column; gap: 20px; }
         }
     </style>
 </head>
 <body>
 
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Navigasi dengan penyesuaian ../ karena berada di dalam folder category/ -->
+    <aside class="sidebar">
+        <label for="menu-toggle" class="close-btn">&#10005;</label>
+        <ul class="sidebar-menu">
+            <li><a href="../index.html" class="main-link">Home</a></li>
+            <li><a href="../pengumuman/pendaftaran.html" class="main-link">Pengumuman</a></li>
+            <li>
+                <a href="#" class="main-link">Kajian <span>&#709;</span></a>
+                <ul class="sidebar-submenu">
+                    <li><a href="pendidikan.html">Pendidikan</a></li>
+                    <li><a href="politik.html">Politik</a></li>
+                    <li><a href="teknologi.html">Teknologi</a></li>
+                    <li><a href="kultur.html">Kultur</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="main-link">Tulisan <span>&#709;</span></a>
+                <ul class="sidebar-submenu">
+                    <li><a href="#">Essay</a></li>
+                    <li><a href="#">Opini</a></li>
+                    <li><a href="#">Cerpen</a></li>
+                    <li><a href="#">Puisi</a></li>
+                    <li><a href="#">Review Buku</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="main-link">Arsip <span>&#709;</span></a>
+                <ul class="sidebar-submenu">
+                    <li><a href="#">Modul</a></li>
+                    <li><a href="../Arsip/TOR/index.html">TOR</a></li>
+                    <li><a href="#">Foto</a></li>
+                    <li><a href="#">Vidio</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="main-link">Lainnya <span>&#709;</span></a>
+                <ul class="sidebar-submenu">
+                    <li><a href="#">Podcast</a></li>
+                    <li><a href="#">Bedah Buku</a></li>
+                    <li><a href="#">Diskusi</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+
     <header class="main-header">
-        <a href="../index.html" class="logo-link">
-            <div class="logo-placeholder">
-                <img src="../assets/logo.png" alt="Logo Sekolah Kajian Budaya" class="site-logo">
-                <span>SEKOLAH</span>KAJIAN BUDAYA
-            </div>
-        </a>
+        <div class="logo-placeholder">
+            <img src="../assets/logo.png" alt="Logo Sekolah Kajian Budaya" class="site-logo">
+            <span>SEKOLAH</span>KAJIAN BUDAYA
+        </div>
         <div class="logo-tagline">Pendidikan tidak mengubah dunia. Pendidikan mengubah manusia dan manusialah yang mengubah dunia.</div>
     </header>
 
-    <div class="blog-wrapper">
-        
-        <main class="content-posts">
-            <div class="culture-heading">Kajian: Teknologi</div>
-            
-            <div class="editorial-grid">
-
-                <article class="magazine-card">
-                    <div class="post-label">TEKNOLOGI</div>
-                    <h2 class="post-title"> Coming soon</h2>
-                    <div class="post-cover">[ Ruang Gambar Artikel ]</div>
-                    <p class="post-snippet">
-                        Coming soon. 
-                    </p>
-                </article>
-
-            </div>
-        </main>
-
-        <aside class="sidebar-panel">
-            <div class="sidebar-box">
-                <h3>Catatan Ruang</h3>
-                <p class="sidebar-text">
-                    teks
-                </p>
-                <a href="../index.html" class="back-link-classic">« Kembali ke Beranda</a>
-            </div>
-        </aside>
-
+    <div class="top-bar">
+        <label for="menu-toggle" class="hamburger-btn">&#9776;</label>
+        <button class="google-btn">G Beri kontribusi dengan Google</button>
+        <div class="search-icon">&#128269;</div>
     </div>
+
+    <!-- =========================================================
+         KONTEN UTAMA: BENTUK FEED BLOG
+         ========================================================= -->
+    <main class="main-content">
+        
+        <div class="section-label">TEKNOLOGI</div>
+        
+        <!-- Contoh Feed Artikel 1 (Belum ada isinya, jadi pakai tanda #) -->
+        <article class="bulletin-feed-card">
+            <span class="feed-category">TEKNOLOGI</span>
+            <h2 class="feed-title">
+                <a href="#">Coming Soon</a>
+            </h2>
+            <p class="feed-snippet">
+                Coming soon
+            </p>
+            <a href="#" class="feed-readmore">Read More »</a>
+        </article>
+
+        <!-- Contoh Feed Artikel 2 -->
+        <article class="bulletin-feed-card">
+            <span class="feed-category">TEKNOLOGI</span>
+            <h2 class="feed-title">
+                <a href="#">Coming soon</a>
+            </h2>
+            <p class="feed-snippet">
+                Coming soon
+            </p>
+            <a href="#" class="feed-readmore">Read More »</a>
+        </article>
+
+    </main>
+
+    <footer class="custom-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../assets/logo.png" alt="Logo Sekbud Bawah" style="height: 60px; width: auto;">
+            </div>
+            <ul class="footer-top-links">
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Syarat & Ketentuan</a></li>
+                <li><a href="#">Kontak Kami</a></li>
+                <li><a href="#">Kebijakan Privasi</a></li>
+            </ul>
+            <div class="footer-categories">
+                <div class="cat-col">
+                    <h4><a href="../index.html" style="color: white; text-decoration: none;">Home</a></h4>
+                    <h4><a href="../pengumuman/pendaftaran.html" style="color: white; text-decoration: none;">Pengumuman</a></h4>
+                </div>
+                <div class="cat-col">
+                    <h4>Kajian</h4>
+                    <ul>
+                        <li><a href="pendidikan.html">Pendidikan</a></li>
+                        <li><a href="politik.html">Politik</a></li>
+                        <li><a href="teknologi.html">Teknologi</a></li>
+                        <li><a href="kultur.html">Kultur</a></li>
+                    </ul>
+                </div>
+                <div class="cat-col">
+                    <h4>Tulisan</h4>
+                    <ul>
+                        <li><a href="#">1. Essay</a></li>
+                        <li><a href="#">2. Opini</a></li>
+                        <li><a href="#">3. Cerpen</a></li>
+                        <li><a href="#">4. Puisi</a></li>
+                        <li><a href="#">5. Review Buku</a></li>
+                    </ul>
+                </div>
+                <div class="cat-col">
+                    <h4>Arsip</h4>
+                    <ul>
+                        <li><a href="#">1. Modul</a></li>
+                        <li><a href="../Arsip/TOR/index.html">2. TOR</a></li>
+                        <li><a href="#">3. Foto</a></li>
+                        <li><a href="#">4. Vidio</a></li>
+                    </ul>
+                </div>
+                <div class="cat-col">
+                    <h4>Lainya</h4>
+                    <ul>
+                        <li><a href="#">1. Podcast</a></li>
+                        <li><a href="#">2. Bedah Buku</a></li>
+                        <li><a href="#">3. Diskusi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom-links">
+                <a href="#">Kerjasama & Portofolio</a>
+                <a href="#">Undangan Menulis</a>
+                <a href="#">Premium</a>
+                <a href="#">Youtube</a>
+                <a href="#" class="btn-pmii">PMII ADHUM</a>
+            </div>
+            <div class="footer-social">
+                <span>📷</span> <span>🐦</span> <span>▶️</span> <span>📘</span> <span>🎵</span>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026, Web Sekolah Kajian Budaya (PMII ADHUM).
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
