@@ -214,6 +214,20 @@ HTML
             left: 0;
         }
 
+        /* Tombol Silang (Close) di dalam Sidebar */
+        .close-btn {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--text-dark);
+            text-align: center;
+            line-height: 36px;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+            background: white;
+        }
+
         /* List Menu Sidebar */
         .sidebar-menu {
             list-style: none;
@@ -425,12 +439,13 @@ HTML
     <input type="checkbox" id="menu-toggle">
 
     <aside class="sidebar">
-        <!-- Kotak kosong label close-btn sudah dihapus di sini -->
+        <label for="menu-toggle" class="close-btn">&#10005;</label>
+        
         <ul class="sidebar-menu">
             <li><a href="#" class="main-link">Home</a></li>
             <li><a href="pengumuman/pendaftaran.html" class="main-link">Pengumuman</a></li>
             <li>
-                <a href="#" class="main-link">Kajian <span></span></a>
+                <a href="#" class="main-link">Kajian <span>&#709;</span></a>
                 <ul class="sidebar-submenu">
                     <li><a href="category/pendidikan.html">Pendidikan</a></li>
                     <li><a href="category/politik.html">Politik</a></li>
@@ -439,7 +454,7 @@ HTML
                 </ul>
             </li>
             <li>
-                <a href="#" class="main-link">Tulisan <span></span></a>
+                <a href="#" class="main-link">Tulisan <span>&#709;</span></a>
                 <ul class="sidebar-submenu">
                     <li><a href="tulisan/essay/index.html">Essay</a></li>
                     <li><a href="tulisan/opini/index.html">Opini</a></li>
@@ -449,7 +464,7 @@ HTML
                 </ul>
             </li>
             <li>
-                <a href="#" class="main-link">Arsip <span></span></a>
+                <a href="#" class="main-link">Arsip <span>&#709;</span></a>
                 <ul class="sidebar-submenu">
                     <li><a href="arsip/modul/index.html">Modul</a></li>
                     <li><a href="arsip/tor/index.html">TOR</a></li>
@@ -459,7 +474,7 @@ HTML
                 </ul>
             </li>
             <li>
-                <a href="#" class="main-link">Lainnya <span></span></a>
+                <a href="#" class="main-link">Lainnya <span>&#709;</span></a>
                 <ul class="sidebar-submenu">
                     <li><a href="lainnya/podcast/index.html">Podcast</a></li>
                     <li><a href="lainnya/bedah-buku/index.html">Bedah Buku</a></li>
