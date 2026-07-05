@@ -238,18 +238,53 @@ HTML
             margin-bottom: 15px;
         }
 
-        .sidebar-menu a.main-link {
+        .sidebar-menu a.main-link,
+        .sidebar-menu .main-link {
             font-weight: bold;
             color: var(--brand-red);
             font-size: 1.1rem;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 0;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .sidebar-dropdown {
+            display: block;
+        }
+
+        .sidebar-dropdown summary {
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .sidebar-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .sidebar-dropdown .caret {
+            transition: transform 0.2s ease;
+            font-size: 1rem;
+        }
+
+        .sidebar-dropdown[open] .caret {
+            transform: rotate(180deg);
         }
 
         .sidebar-submenu {
             list-style: none;
             padding-left: 15px;
             margin-top: 10px;
+            display: none;
+        }
+
+        .sidebar-dropdown[open] .sidebar-submenu {
+            display: block;
         }
 
         .sidebar-submenu li {
@@ -445,41 +480,49 @@ HTML
             <li><a href="#" class="main-link">Home</a></li>
             <li><a href="pengumuman/pendaftaran.html" class="main-link">Pengumuman</a></li>
             <li>
-                <a href="#" class="main-link">Kajian <span>&#709;</span></a>
-                <ul class="sidebar-submenu">
-                    <li><a href="category/pendidikan.html">Pendidikan</a></li>
-                    <li><a href="category/politik.html">Politik</a></li>
-                    <li><a href="category/teknologi.html">Teknologi</a></li>
-                    <li><a href="category/kultur.html">Kultur</a></li>
-                </ul>
+                <details class="sidebar-dropdown">
+                    <summary class="main-link">Kajian <span class="caret">▾</span></summary>
+                    <ul class="sidebar-submenu">
+                        <li><a href="category/pendidikan.html">Pendidikan</a></li>
+                        <li><a href="category/politik.html">Politik</a></li>
+                        <li><a href="category/teknologi.html">Teknologi</a></li>
+                        <li><a href="category/kultur.html">Kultur</a></li>
+                    </ul>
+                </details>
             </li>
             <li>
-                <a href="#" class="main-link">Tulisan <span>&#709;</span></a>
-                <ul class="sidebar-submenu">
-                    <li><a href="tulisan/essay/index.html">Essay</a></li>
-                    <li><a href="tulisan/opini/index.html">Opini</a></li>
-                    <li><a href="tulisan/cerpen/index.html">Cerpen</a></li>
-                    <li><a href="tulisan/puisi/index.html">Puisi</a></li>
-                    <li><a href="tulisan/review-buku/index.html">Review Buku</a></li>
-                </ul>
+                <details class="sidebar-dropdown">
+                    <summary class="main-link">Tulisan <span class="caret">▾</span></summary>
+                    <ul class="sidebar-submenu">
+                        <li><a href="tulisan/essay/index.html">Essay</a></li>
+                        <li><a href="tulisan/opini/index.html">Opini</a></li>
+                        <li><a href="tulisan/cerpen/index.html">Cerpen</a></li>
+                        <li><a href="tulisan/puisi/index.html">Puisi</a></li>
+                        <li><a href="tulisan/review-buku/index.html">Review Buku</a></li>
+                    </ul>
+                </details>
             </li>
             <li>
-                <a href="#" class="main-link">Arsip <span>&#709;</span></a>
-                <ul class="sidebar-submenu">
-                    <li><a href="arsip/modul/index.html">Modul</a></li>
-                    <li><a href="arsip/tor/index.html">TOR</a></li>
-                    <li><a href="arsip/foto/index.html">Foto</a></li>
-                    <li><a href="arsip/video/index.html">Video</a></li>
-                    <li><a href="lainnya/bulletin/10-06-2026.html">Bulletin</a></li>
-                </ul>
+                <details class="sidebar-dropdown">
+                    <summary class="main-link">Arsip <span class="caret">▾</span></summary>
+                    <ul class="sidebar-submenu">
+                        <li><a href="arsip/modul/index.html">Modul</a></li>
+                        <li><a href="arsip/tor/index.html">TOR</a></li>
+                        <li><a href="arsip/foto/index.html">Foto</a></li>
+                        <li><a href="arsip/video/index.html">Video</a></li>
+                        <li><a href="lainnya/bulletin/10-06-2026.html">Bulletin</a></li>
+                    </ul>
+                </details>
             </li>
             <li>
-                <a href="#" class="main-link">Lainnya <span>&#709;</span></a>
-                <ul class="sidebar-submenu">
-                    <li><a href="lainnya/podcast/index.html">Podcast</a></li>
-                    <li><a href="lainnya/bedah-buku/index.html">Bedah Buku</a></li>
-                    <li><a href="lainnya/diskusi/index.html">Diskusi</a></li>
-                </ul>
+                <details class="sidebar-dropdown">
+                    <summary class="main-link">Lainnya <span class="caret">▾</span></summary>
+                    <ul class="sidebar-submenu">
+                        <li><a href="lainnya/podcast/index.html">Podcast</a></li>
+                        <li><a href="lainnya/bedah-buku/index.html">Bedah Buku</a></li>
+                        <li><a href="lainnya/diskusi/index.html">Diskusi</a></li>
+                    </ul>
+                </details>
             </li>
         </ul>
     </aside>
@@ -487,9 +530,7 @@ HTML
     <header class="main-header">
         <div class="logo-placeholder">
             <img src="./assets/logo.png" alt="Logo Sekolah Kajian Budaya" class="site-logo">
-            <span>SEKOLAH</span>KAJIAN BUDAYA
-        </div>
-        <div class="logo-tagline">Pendidikan tidak mengubah dunia. Pendidikan mengubah manusia dan manusialah yang mengubah dunia.</div>
+            <span>SEKOLAH</span>KAJIAN BUDAYA</span></div>
     </header>
 
     <div class="top-bar">
