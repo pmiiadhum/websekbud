@@ -50,13 +50,25 @@
         .main-content { padding: 24px 20px 40px 20px; max-width: 1100px; margin: 0 auto; }
         .section-label { color: var(--brand-red); font-weight: bold; font-size: 0.8rem; margin-bottom: 16px; text-transform: uppercase; }
         .custom-footer { background-color: #333333; color: #ffffff; padding: 50px 20px 20px 20px; margin-top: 50px; }
-        .footer-container { max-width: 1100px; margin: 0 auto; }
-        .footer-logo { margin-bottom: 18px; }
-        .footer-logo img { height: 60px; width: auto; }
-        .footer-top-links { list-style: none; padding: 0; margin-bottom: 24px; }
-        .footer-top-links li { margin-bottom: 10px; }
-        .footer-top-links a { color: #e0e0e0; font-size: 1rem; }
-        .footer-copyright { color: #888888; font-size: 0.8rem; margin-top: 20px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+        .footer-logo { font-size: 2rem; font-weight: bold; margin-bottom: 20px; font-family: 'Times New Roman', Times, serif; }
+        .footer-logo span { color: #c0172e; }
+        .footer-top-links { list-style: none; padding: 0; margin-bottom: 30px; }
+        .footer-top-links li { margin-bottom: 12px; }
+        .footer-top-links a { color: #e0e0e0; font-size: 1rem; transition: color 0.3s; }
+        .footer-top-links a:hover { color: #ffffff; }
+        .footer-categories { display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 40px; border-top: 1px solid #555; border-bottom: 1px solid #555; padding: 30px 0; }
+        .cat-col { flex: 1; min-width: 140px; }
+        .cat-col h4 { font-size: 1rem; margin-bottom: 15px; font-weight: bold; color: #ffffff; }
+        .cat-col ul { list-style: none; padding: 0; }
+        .cat-col ul li { margin-bottom: 8px; }
+        .cat-col ul a { color: #bbbbbb; font-size: 0.9rem; }
+        .cat-col ul a:hover { color: #ffffff; }
+        .footer-bottom-links { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 30px; font-size: 0.9rem; }
+        .footer-bottom-links a { color: #e0e0e0; }
+        .btn-pmii { background-color: #ffffff; color: #333333 !important; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; }
+        .footer-social { display: flex; gap: 15px; margin-bottom: 20px; font-size: 1.2rem; }
+        .footer-copyright { color: #888888; font-size: 0.8rem; }
         @media (max-width: 768px) { .main-header { padding: 16px; } .logo-placeholder { font-size: 1.1rem; } .site-logo { height: 80px; } }
     </style>
 </head>
@@ -96,7 +108,7 @@
                     <ul class="sidebar-submenu">
                         <li><a href="../modul/index.html">Modul</a></li>
                         <li><a href="index.html">TOR</a></li>
-                        <li><a href="../Foto/index.html">Foto</a></li>
+                        <li><a href="../foto/index.html">Foto</a></li>
                         <li><a href="../video/index.html">Video</a></li>
                         <li><a href="../../lainnya/bulletin/index.html">Bulletin</a></li>
                     </ul>
@@ -145,10 +157,10 @@
         </article>
     </main>
 
-    <footer class="custom-footer">
+        <footer class="custom-footer">
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="../../assets/logo.png" alt="Logo Sekbud Bawah">
+                <img src="../../assets/logo.png" alt="Logo Sekbud Bawah" style="height: 60px; width: auto;">
             </div>
             <ul class="footer-top-links">
                 <li><a href="#">Tentang Kami</a></li>
@@ -156,7 +168,61 @@
                 <li><a href="#">Kontak Kami</a></li>
                 <li><a href="#">Kebijakan Privasi</a></li>
             </ul>
-            <div class="footer-copyright">&copy; 2026, Web Sekolah Kajian Budaya (PMII ADHUM).</div>
+            <div class="footer-categories">
+                <div class="cat-col">
+                    <h4><a href="../../index.html" style="color: white; text-decoration: none;">Home</a></h4>
+                    <h4><a href="../../pengumuman/index.html" style="color: white; text-decoration: none;">Pengumuman</a></h4>
+                </div>
+                <div class="cat-col">
+                    <h4>Kajian</h4>
+                    <ul>
+                        <li><a href="../../category/pendidikan.html">Pendidikan</a></li>
+                        <li><a href="../../category/politik.html">Politik</a></li>
+                        <li><a href="../../category/teknologi.html">Teknologi</a></li>
+                        <li><a href="../../category/kultur.html">Kultur</a></li>
+                    </ul>
+                </div>
+                <div class="cat-col">
+                    <h4>Tulisan</h4>
+                    <ul>
+                        <li><a href="../../tulisan/essay/index.html">1. Essay</a></li>
+                        <li><a href="../../tulisan/opini/index.html">2. Opini</a></li>
+                        <li><a href="../../tulisan/cerpen/index.html">3. Cerpen</a></li>
+                        <li><a href="../../tulisan/puisi/index.html">4. Puisi</a></li>
+                        <li><a href="../../tulisan/review-buku/index.html">5. Review Buku</a></li>
+                    </ul>
+                </div>
+                <div class="cat-col">
+                    <h4>Arsip</h4>
+                    <ul>
+                        <li><a href="../../arsip/modul/index.html">1. Modul</a></li>
+                        <li><a href="../../arsip/tor/index.html">2. TOR</a></li>
+                        <li><a href="../../arsip/foto/index.html">3. Foto</a></li>
+                        <li><a href="../../arsip/video/index.html">4. Vidio</a></li>
+                    </ul>
+                </div>
+                <div class="cat-col">
+                    <h4>Lainya</h4>
+                    <ul>
+                        <li><a href="../../lainnya/podcast/index.html">1. Podcast</a></li>
+                        <li><a href="../../lainnya/bedah-buku/index.html">2. Bedah Buku</a></li>
+                        <li><a href="../../lainnya/diskusi/index.html">3. Diskusi</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom-links">
+                <a href="#">Kerjasama & Portofolio</a>
+                <a href="#">Undangan Menulis</a>
+                <a href="#">Premium</a>
+                <a href="#">Youtube</a>
+                <a href="#" class="btn-pmii">PMII ADHUM</a>
+            </div>
+            <div class="footer-social">
+                <span>📷</span> <span>🐦</span> <span>▶️</span> <span>📘</span> <span>🎵</span>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026, Web Sekolah Kajian Budaya (PMII ADHUM).
+            </div>
         </div>
     </footer>
 </body>
