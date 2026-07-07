@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TULISAN - Sekolah Kajian Budaya</title>
+	<style>
+		:root {
+			--brand-red: #c0172e;
+			--text-dark: #333;
+			--text-gray: #666;
+			--bg-light: #f5f5f5;
+			--border-color: #ddd;
+			--bg-krem: #faf8f5;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		body {
+			color: var(--text-dark);
+			background: var(--bg-krem);
+			overflow-x: hidden;
+		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.main-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 16px;
+			padding: 20px;
+			border-bottom: 1px solid var(--border-color);
+			background: white;
+			position: sticky;
+			top: 0;
+			z-index: 100;
+		}
+
+		.logo-placeholder {
+			font-size: 1.5rem;
+			font-weight: bold;
+			color: var(--text-dark);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 10px;
+			flex: 1;
+			min-width: 0;
+		}
+
+		.logo-placeholder span {
+			color: var(--brand-red);
+		}
+
+		.site-logo {
+			height: 128px;
+			width: auto;
+			object-fit: contain;
+		}
+
+		.main-content {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 28px 20px 48px;
+		}
+
+		.hero {
+			background: white;
+			border: 1px solid #ebdcd0;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+			padding: 28px;
+			margin-bottom: 24px;
+		}
+
+		.section-label {
+			color: var(--brand-red);
+			font-weight: bold;
+			font-size: 0.8rem;
+			margin-bottom: 14px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+
+		.page-title {
+			font-size: 2rem;
+			color: #2c2520;
+			margin-bottom: 10px;
+			line-height: 1.2;
+		}
+
+		.page-desc {
+			color: var(--text-gray);
+			line-height: 1.7;
+			max-width: 760px;
+		}
+
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 18px;
+		}
+
+		.card {
+			background: white;
+			border: 1px solid #ebdcd0;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+			padding: 22px;
+			min-height: 170px;
+		}
+
+		.card-category {
+			color: var(--brand-red);
+			font-size: 0.75rem;
+			font-weight: bold;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+
+		.card-title {
+			font-family: Georgia, serif;
+			font-size: 1.35rem;
+			color: #2c2520;
+			margin-bottom: 10px;
+			line-height: 1.3;
+		}
+
+		.card-text {
+			color: #5c5247;
+			line-height: 1.6;
+			margin-bottom: 18px;
+			font-family: Georgia, serif;
+		}
+
+		.card-link {
+			display: inline-block;
+			font-family: Arial, sans-serif;
+			font-size: 0.8rem;
+			color: var(--brand-red);
+			font-weight: bold;
+			text-transform: uppercase;
+			border-bottom: 1px dashed var(--brand-red);
+			padding-bottom: 2px;
+			transition: all 0.2s;
+		}
+
+		.card-link:hover {
+			color: #2c2520;
+			border-color: #2c2520;
+		}
+
+		.footer-note {
+			margin-top: 28px;
+			color: var(--text-gray);
+			font-size: 0.9rem;
+		}
+
+		@media (max-width: 768px) {
+			.main-header {
+				padding: 16px;
+			}
+
+			.logo-placeholder {
+				font-size: 1.1rem;
+			}
+
+			.site-logo {
+				height: 80px;
+			}
+
+			.grid {
+				grid-template-columns: 1fr;
+			}
+
+			.page-title {
+				font-size: 1.5rem;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header class="main-header">
+		<div class="logo-placeholder">
+			<img src="../assets/logo.png" alt="Logo Sekolah Kajian Budaya" class="site-logo">
+			<span>SEKOLAH</span>KAJIAN BUDAYA
+		</div>
+	</header>
+
+	<main class="main-content">
+		<section class="hero">
+			<div class="section-label">TULISAN</div>
+			<h1 class="page-title">Indeks Tulisan Sekolah Kajian Budaya</h1>
+			<p class="page-desc">Halaman ini menjadi pintu masuk ke seluruh jenis tulisan di folder <strong>tulisan</strong>. Silakan buka kategori yang tersedia untuk membaca isi lengkapnya.</p>
+		</section>
+
+		<section class="grid" aria-label="Daftar kategori tulisan">
+			<article class="card">
+				<div class="card-category">Essay</div>
+				<h2 class="card-title">Kumpulan Essay</h2>
+				<p class="card-text">Tulisan essay yang tersedia di folder khusus essay.</p>
+				<a class="card-link" href="essay/index.html">Buka Essay »</a>
+			</article>
+
+			<article class="card">
+				<div class="card-category">Opini</div>
+				<h2 class="card-title">Kumpulan Opini</h2>
+				<p class="card-text">Refleksi dan gagasan yang tersusun dalam format opini.</p>
+				<a class="card-link" href="opini/index.html">Buka Opini »</a>
+			</article>
+
+			<article class="card">
+				<div class="card-category">Cerpen</div>
+				<h2 class="card-title">Kumpulan Cerpen</h2>
+				<p class="card-text">Cerita pendek yang terindeks di folder cerpen.</p>
+				<a class="card-link" href="cerpen/index.html">Buka Cerpen »</a>
+			</article>
+
+			<article class="card">
+				<div class="card-category">Puisi</div>
+				<h2 class="card-title">Kumpulan Puisi</h2>
+				<p class="card-text">Rangkaian puisi yang sudah tersedia dalam folder puisi.</p>
+				<a class="card-link" href="puisi/index.html">Buka Puisi »</a>
+			</article>
+
+			<article class="card">
+				<div class="card-category">Review Buku</div>
+				<h2 class="card-title">Kumpulan Review Buku</h2>
+				<p class="card-text">Ulasan buku dan bacaan yang terindeks pada subfolder review buku.</p>
+				<a class="card-link" href="review-buku/index.html">Buka Review Buku »</a>
+			</article>
+		</section>
+
+		<p class="footer-note">Jika Anda membuka folder ini langsung dari server, halaman ini akan tampil sebagai index utama dan mencegah daftar direktori terbuka.</p>
+	</main>
+</body>
+</html>
