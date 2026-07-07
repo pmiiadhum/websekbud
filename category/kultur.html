@@ -35,20 +35,14 @@
         .feed-readmore { display: inline-block; font-family: Arial, sans-serif; font-size: 0.8rem; color: var(--brand-red); font-weight: bold; text-transform: uppercase; border-bottom: 1px dashed var(--brand-red); padding-bottom: 2px; transition: all 0.2s; }
         .feed-readmore:hover { color: #2c2520; border-color: #2c2520; }
 
-        /* =========================================
-            HEADER, NAVIGASI, & SIDEBAR
-           ========================================= */
-        .main-header { text-align: center; padding: 20px 10px; border-bottom: 1px solid var(--border-color); background: white; }
-        .logo-placeholder { font-size: 1.8rem; font-weight: bold; color: var(--text-dark); display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .main-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px; border-bottom: 1px solid var(--border-color); background: white; position: sticky; top: 0; z-index: 100; }
+        .logo-placeholder { font-size: 1.5rem; font-weight: bold; color: var(--text-dark); display: flex; align-items: center; justify-content: center; gap: 10px; flex: 1; min-width: 0; }
         .logo-placeholder span { color: var(--brand-red); }
-        .logo-tagline { font-size: 0.9rem; color: var(--text-gray); margin-top: 5px; }
         .site-logo { height: 128px; width: auto; object-fit: contain; }
-
-        .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: white; z-index: 100; }
+        .header-actions { display: flex; align-items: center; gap: 10px; }
         .hamburger-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 2px solid var(--text-dark); background: white; font-size: 24px; cursor: pointer; border-radius: 3px; }
-        .google-btn { display: flex; align-items: center; gap: 10px; border: 1px solid var(--border-color); padding: 8px 15px; border-radius: 4px; font-size: 0.85rem; color: #1a73e8; background: white; cursor: pointer; }
-        .google-btn img { width: 15px; }
-        .search-icon { font-size: 1.5rem; cursor: pointer; font-weight: bold; }
+        .search-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 2px solid var(--text-dark); background: white; cursor: pointer; border-radius: 3px; padding: 0; }
+        .search-btn img { width: 18px; height: 18px; display: block; filter: brightness(0); }
 
         #menu-toggle { display: none; }
         .sidebar { position: fixed; top: 0; left: -300px; width: 250px; height: 100vh; background-color: var(--bg-light); box-shadow: 2px 0 5px rgba(0,0,0,0.1); transition: left 0.3s ease; z-index: 999; overflow-y: auto; border-right: 2px solid var(--border-color); }
@@ -58,6 +52,16 @@
         .sidebar-menu { list-style: none; padding: 10px 20px; }
         .sidebar-menu li { margin-bottom: 15px; }
         .sidebar-menu a.main-link { font-weight: bold; color: var(--brand-red); font-size: 1.1rem; display: flex; justify-content: space-between; }
+        .sidebar-dropdown { display: block; }
+        .sidebar-dropdown summary { list-style: none; cursor: pointer; }
+        .sidebar-dropdown summary::-webkit-details-marker { display: none; }
+        .sidebar-dropdown .caret { transition: transform .2s ease; font-size: 1rem; }
+        .sidebar-dropdown[open] .caret { transform: rotate(180deg); }
+        .sidebar-submenu { list-style: none; padding-left: 15px; margin-top: 10px; display: none; }
+        .sidebar-dropdown[open] .sidebar-submenu { display: block; }
+        .sidebar-submenu li { margin-bottom: 12px; font-size: 0.95rem; font-weight: 500; }
+        .sidebar-submenu a:hover { color: var(--brand-red); }
+
         .sidebar-submenu { list-style: none; padding-left: 15px; margin-top: 10px; }
         .sidebar-submenu li { margin-bottom: 12px; font-size: 0.95rem; font-weight: 500; }
         .sidebar-submenu a:hover { color: var(--brand-red); }
@@ -103,58 +107,71 @@
         <label for="menu-toggle" class="close-btn">&#10005;</label>
         <ul class="sidebar-menu">
             <li><a href="../index.html" class="main-link">Home</a></li>
-            <li><a href="../pengumuman/pendaftaran.html" class="main-link">Pengumuman</a></li>
+            <li><a href="../pengumuman/index.html" class="main-link">Pengumuman</a></li>
             <li>
-                <a href="#" class="main-link">Kajian <span>&#709;</span></a>
-                <ul class="sidebar-submenu">
-                    <li><a href="../pendidikan.html">Pendidikan</a></li>
-                    <li><a href="../politik.html">Politik</a></li>
-                    <li><a href="../teknologi.html">Teknologi</a></li>
-                    <li><a href="../kultur.html">Kultur</a></li>
-                </ul>
+                <details class="sidebar-dropdown">
+                    <summary class="main-link">Kajian <span class="caret">▾</span></summary>
+                    <ul class="sidebar-submenu">
+                        <li><a href="pendidikan.html">Pendidikan</a></li>
+                        <li><a href="politik.html">Politik</a></li>
+                        <li><a href="teknologi.html">Teknologi</a></li>
+                        <li><a href="kultur.html">Kultur</a></li>
+                    </ul>
+                </details>
             </li>
             <li>
-                <a href="#" class="main-link">Tulisan <span>&#709;</span></a>
-                <ul class="sidebar-submenu">
-                    <li><a href="../tulisan/essay/index.html">Essay</a></li>
-                    <li><a href="../tulisan/opini/index.html">Opini</a></li>
-                    <li><a href="../tulisan/cerpen/index.html">Cerpen</a></li>
-                    <li><a href="../tulisan/puisi/index.html">Puisi</a></li>
-                    <li><a href="../tulisan/review-buku/index.html">Review Buku</a></li>
-                </ul>
+                <details class="sidebar-dropdown">
+                    <summary class="main-link">Tulisan <span class="caret">▾</span></summary>
+                    <ul class="sidebar-submenu">
+                        <li><a href="../tulisan/essay/index.html">Essay</a></li>
+                        <li><a href="../tulisan/opini/index.html">Opini</a></li>
+                        <li><a href="../tulisan/cerpen/index.html">Cerpen</a></li>
+                        <li><a href="../tulisan/puisi/index.html">Puisi</a></li>
+                        <li><a href="../tulisan/review-buku/index.html">Review Buku</a></li>
+                    </ul>
+                </details>
             </li>
             <li>
-                <a href="#" class="main-link">Arsip <span>&#709;</span></a>
-                <ul class="sidebar-submenu">
-                    <li><a href="../arsip/modul/index.html">Modul</a></li>
-                    <li><a href="../Arsip/TOR/index.html">TOR</a></li>
-                    <li><a href="../arsip/foto/index.html">Foto</a></li>
-                    <li><a href="../arsip/video/index.html">Vidio</a></li>
-                </ul>
+                <details class="sidebar-dropdown">
+                    <summary class="main-link">Arsip <span class="caret">▾</span></summary>
+                    <ul class="sidebar-submenu">
+                        <li><a href="../arsip/modul/index.html">Modul</a></li>
+                        <li><a href="../arsip/tor/index.html">TOR</a></li>
+                        <li><a href="../arsip/Foto/index.html">Foto</a></li>
+                        <li><a href="../arsip/video/index.html">Video</a></li>
+                        <li><a href="../lainnya/bulletin/index.html">Bulletin</a></li>
+                    </ul>
+                </details>
             </li>
             <li>
-                <a href="#" class="main-link">Lainnya <span>&#709;</span></a>
-                <ul class="sidebar-submenu">
-                    <li><a href="../lainnya/podcast/index.html">Podcast</a></li>
-                    <li><a href="../lainnya/bedah-buku/index.html">Bedah Buku</a></li>
-                    <li><a href="../lainnya/diskusi/index.html">Diskusi</a></li>
-                </ul>
+                <details class="sidebar-dropdown">
+                    <summary class="main-link">Lainnya <span class="caret">▾</span></summary>
+                    <ul class="sidebar-submenu">
+                        <li><a href="../lainnya/podcast/index.html">Podcast</a></li>
+                        <li><a href="../lainnya/bedah-buku/index.html">Bedah Buku</a></li>
+                        <li><a href="../lainnya/diskusi/index.html">Diskusi</a></li>
+                    </ul>
+                </details>
             </li>
         </ul>
     </aside>
 
     <header class="main-header">
+        <div class="header-actions">
+            <label for="menu-toggle" class="hamburger-btn" aria-label="Buka menu">☰</label>
+        </div>
+
         <div class="logo-placeholder">
             <img src="../assets/logo.png" alt="Logo Sekolah Kajian Budaya" class="site-logo">
             <span>SEKOLAH</span>KAJIAN BUDAYA
         </div>
-        <div class="logo-tagline">Pendidikan tidak mengubah dunia. Pendidikan mengubah manusia dan manusialah yang mengubah dunia.</div>
-    </header>
 
-    <div class="top-bar">
-        <label for="menu-toggle" class="hamburger-btn">&#9776;</label>
-        <div class="search-icon">&#128269;</div>
-    </div>
+        <div class="header-actions">
+            <button class="search-btn" type="button" aria-label="Cari">
+                <img src="https://cdn-icons-png.flaticon.com/512/151/151773.png" alt="Ikon pencarian">
+            </button>
+        </div>
+    </header>
 
     <!-- =========================================================
          KONTEN UTAMA: BENTUK FEED BLOG
@@ -203,7 +220,7 @@
             <div class="footer-categories">
                 <div class="cat-col">
                     <h4><a href="../index.html" style="color: white; text-decoration: none;">Home</a></h4>
-                    <h4><a href="../pengumuman/pendaftaran.html" style="color: white; text-decoration: none;">Pengumuman</a></h4>
+                    <h4><a href="../pengumuman/index.html" style="color: white; text-decoration: none;">Pengumuman</a></h4>
                 </div>
                 <div class="cat-col">
                     <h4>Kajian</h4>
