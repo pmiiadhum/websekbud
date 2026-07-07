@@ -49,6 +49,13 @@
         .sidebar-submenu a:hover { color: var(--brand-red); }
         .main-content { padding: 24px 20px 40px 20px; max-width: 1100px; margin: 0 auto; }
         .section-label { color: var(--brand-red); font-weight: bold; font-size: 0.8rem; margin-bottom: 16px; text-transform: uppercase; }
+        .content-page { background: white; border: 1px solid #ebdcd0; border-radius: 2px; padding: 28px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .content-page h1 { font-size: 2rem; line-height: 1.25; margin-bottom: 12px; color: #2c2520; }
+        .content-page .intro { font-family: 'Georgia', serif; font-size: 1rem; line-height: 1.75; color: #5c5247; margin-bottom: 24px; text-align: justify; }
+        .privacy-block { margin-bottom: 22px; }
+        .privacy-block h2 { font-size: 1.15rem; color: #2c2520; margin-bottom: 10px; }
+        .privacy-block p { font-family: 'Georgia', serif; font-size: 0.98rem; line-height: 1.75; color: #5c5247; text-align: justify; margin-bottom: 10px; }
+        .privacy-note { margin-top: 24px; padding-top: 18px; border-top: 1px solid #ebdcd0; font-family: 'Georgia', serif; font-size: 0.95rem; line-height: 1.7; color: #5c5247; }
         .custom-footer { background-color: #333333; color: #ffffff; padding: 50px 20px 20px 20px; margin-top: 50px; }
         .footer-container { max-width: 1200px; margin: 0 auto; }
         .footer-logo { font-size: 2rem; font-weight: bold; margin-bottom: 20px; font-family: 'Times New Roman', Times, serif; }
@@ -146,23 +153,26 @@
 
     <main class="main-content">
         <div class="section-label">KEBIJAKAN PRIVASI</div>
-        <article class="bulletin-feed-card">
-            <span class="feed-category">PRIVASI</span>
-            <h2 class="feed-title"><a href="#">Privacy Policy</a></h2>
-            <p class="feed-snippet">Web ini belum menggunakan cookies analitik, pelacakan perilaku, atau session storage untuk identifikasi pengguna. Sekolah Kajian Budaya berjalan sebagai situs statis yang di-host di Netlify, sehingga akses pengunjung hanya memuat konten tanpa mekanisme login maupun pengumpulan data yang tersembunyi.</p>
-            <a href="#" class="feed-readmore">Baca Kebijakan »</a>
-        </article>
-        <article class="bulletin-feed-card">
-            <span class="feed-category">DATA</span>
-            <h2 class="feed-title"><a href="#">Data yang Diproses</a></h2>
-            <p class="feed-snippet">Saat ini kami hanya memanfaatkan data yang Anda kirimkan secara sadar, misalnya email yang dikirim melalui formulir atau tautan kontak. Jika di masa depan ada pembaruan fitur, kebijakan ini akan diperbarui agar tetap transparan.</p>
-            <a href="#" class="feed-readmore">Pelajari Lebih Lanjut »</a>
-        </article>
-        <article class="bulletin-feed-card">
-            <span class="feed-category">PRINSIP</span>
-            <h2 class="feed-title"><a href="#">Prinsip Dasar</a></h2>
-            <p class="feed-snippet">Kami menjaga kesederhanaan: tidak ada cookies analitik, tidak ada tracking session, dan tidak ada profil pengguna yang disimpan di sisi situs. Fokus kami adalah publikasi konten budaya, bukan pengumpulan data.</p>
-            <a href="#" class="feed-readmore">Lihat Prinsip »</a>
+        <article class="content-page">
+            <h1>Kebijakan Privasi</h1>
+            <p class="intro">Sekolah Kajian Budaya dibangun sebagai situs statis untuk publikasi, arsip, dan dokumentasi konten. Karena sifatnya sederhana, halaman ini menjelaskan langsung bagaimana situs bekerja dan bagaimana data pengunjung diperlakukan.</p>
+
+            <section class="privacy-block">
+                <h2>1. Ruang Lingkup Situs</h2>
+                <p>Situs ini menampilkan konten informatif tanpa sistem login, tanpa profil pengguna, dan tanpa fitur interaksi yang memerlukan pembuatan akun. Pengunjung hanya membaca halaman yang tersedia dan berpindah antarhalaman melalui tautan navigasi.</p>
+            </section>
+
+            <section class="privacy-block">
+                <h2>2. Data yang Diproses</h2>
+                <p>Pada dasarnya situs ini tidak mengumpulkan data pribadi secara aktif. Kami tidak memakai cookies analitik, tidak menyimpan session tracking, dan tidak menjalankan pelacakan perilaku pengunjung. Jika Anda menghubungi kami melalui email atau kanal sosial, data yang Anda kirimkan hanya digunakan untuk merespons pesan tersebut.</p>
+            </section>
+
+            <section class="privacy-block">
+                <h2>3. Prinsip Dasar Pengelolaan</h2>
+                <p>Prinsip kami adalah menjaga situs tetap sederhana, transparan, dan ringan. Karena itu, kami tidak membuat pengumpulan data tersembunyi atau mekanisme pengawasan pengguna. Fokus utama situs tetap pada publikasi konten budaya, arsip, dan informasi komunitas.</p>
+            </section>
+
+            <p class="privacy-note">Jika di masa depan ada perubahan pada fitur situs atau cara pengolahan data, halaman ini akan diperbarui agar tetap jelas dan mudah dipahami.</p>
         </article>
 
     </main>
