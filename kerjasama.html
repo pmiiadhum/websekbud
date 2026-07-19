@@ -3,38 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kultur - Sekolah Kajian Budaya</title>
+    <title>Kerjasama & Portofolio - Sekolah Kajian Budaya</title>
     <style>
-        /* =========================================
-            VARIABEL WARNA & RESET DASAR
-           ========================================= */
         :root {
             --brand-red: #c0172e;
             --text-dark: #333;
             --text-gray: #666;
             --bg-light: #f5f5f5;
             --border-color: #ddd;
-            --bg-krem: #faf8f5; 
+            --bg-krem: #faf8f5;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
         body { color: var(--text-dark); overflow-x: hidden; background-color: var(--bg-krem); }
         a { text-decoration: none; color: inherit; }
-
-        /* =========================================================================
-           [ KOTAK FEED BULETIN GAYA BLOGSPOT/WORDPRESS ]
-           ========================================================================= */
-        .bulletin-feed-card {
-            background: white; padding: 25px; border: 1px solid #ebdcd0; border-radius: 2px;
-            margin-bottom: 40px; font-family: 'Georgia', serif; box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        }
+        .bulletin-feed-card { background: white; padding: 25px; border: 1px solid #ebdcd0; border-radius: 2px; margin-bottom: 24px; font-family: 'Georgia', serif; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
         .feed-category { color: var(--brand-red); font-family: Arial, sans-serif; font-size: 0.75rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
-        .feed-title { font-size: 1.6rem; margin: 8px 0 12px 0; line-height: 1.3; color: #2c2520; font-weight: bold; }
+        .feed-title { font-size: 1.5rem; margin: 8px 0 12px 0; line-height: 1.3; color: #2c2520; font-weight: bold; }
         .feed-title a:hover { color: var(--brand-red); }
         .feed-snippet { font-size: 0.95rem; color: #5c5247; margin-bottom: 18px; text-align: justify; line-height: 1.6; font-family: 'Georgia', serif; }
-        .feed-readmore { display: inline-block; font-family: Arial, sans-serif; font-size: 0.8rem; color: var(--brand-red); font-weight: bold; text-transform: uppercase; border-bottom: 1px dashed var(--brand-red); padding-bottom: 2px; transition: all 0.2s; }
+        .feed-readmore { display: inline-block; font-family: Arial, sans-serif; font-size: 0.8rem; color: var(--brand-red); font-weight: bold; text-transform: uppercase; border-bottom: 1px dashed var(--brand-red); padding-bottom: 2px; transition: all .2s; }
         .feed-readmore:hover { color: #2c2520; border-color: #2c2520; }
-
         .main-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px; border-bottom: 1px solid var(--border-color); background: white; position: sticky; top: 0; z-index: 100; }
         .logo-placeholder { font-size: 1.5rem; font-weight: bold; color: var(--text-dark); display: flex; align-items: center; justify-content: center; gap: 10px; flex: 1; min-width: 0; }
         .logo-placeholder span { color: var(--brand-red); }
@@ -43,15 +31,13 @@
         .hamburger-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 2px solid var(--text-dark); background: white; font-size: 24px; cursor: pointer; border-radius: 3px; }
         .search-btn { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 2px solid var(--text-dark); background: white; cursor: pointer; border-radius: 3px; padding: 0; }
         .search-btn img { width: 18px; height: 18px; display: block; filter: brightness(0); }
-
         #menu-toggle { display: none; }
         .sidebar { position: fixed; top: 0; left: -300px; width: 250px; height: 100vh; background-color: var(--bg-light); box-shadow: 2px 0 5px rgba(0,0,0,0.1); transition: left 0.3s ease; z-index: 999; overflow-y: auto; border-right: 2px solid var(--border-color); }
         #menu-toggle:checked ~ .sidebar { left: 0; }
         .close-btn { display: block; width: 40px; height: 40px; border: 2px solid var(--text-dark); text-align: center; line-height: 36px; font-size: 20px; margin: 10px; cursor: pointer; background: white; }
-        
-        .sidebar-menu { list-style: none; padding: 10px 20px; }
+        .sidebar-menu { list-style: none; padding: 20px; }
         .sidebar-menu li { margin-bottom: 15px; }
-        .sidebar-menu a.main-link { font-weight: bold; color: var(--brand-red); font-size: 1.1rem; display: flex; justify-content: space-between; }
+        .sidebar-menu a.main-link, .sidebar-menu .main-link { font-weight: bold; color: var(--brand-red); font-size: 1.05rem; display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; padding: 0; text-align: left; cursor: pointer; }
         .sidebar-dropdown { display: block; }
         .sidebar-dropdown summary { list-style: none; cursor: pointer; }
         .sidebar-dropdown summary::-webkit-details-marker { display: none; }
@@ -61,17 +47,8 @@
         .sidebar-dropdown[open] .sidebar-submenu { display: block; }
         .sidebar-submenu li { margin-bottom: 12px; font-size: 0.95rem; font-weight: 500; }
         .sidebar-submenu a:hover { color: var(--brand-red); }
-
-        .sidebar-submenu { list-style: none; padding-left: 15px; margin-top: 10px; }
-        .sidebar-submenu li { margin-bottom: 12px; font-size: 0.95rem; font-weight: 500; }
-        .sidebar-submenu a:hover { color: var(--brand-red); }
-
-        .main-content { padding: 20px; max-width: 1200px; margin: 0 auto; }
-        .section-label { color: var(--brand-red); font-weight: bold; font-size: 1.2rem; margin-bottom: 25px; text-transform: uppercase; border-bottom: 2px solid var(--brand-red); display: inline-block; padding-bottom: 5px;}
-
-        /* =========================================
-            FOOTER GAYA HISTORIA
-           ========================================= */
+        .main-content { padding: 24px 20px 40px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-label { color: var(--brand-red); font-weight: bold; font-size: 0.8rem; margin-bottom: 16px; text-transform: uppercase; }
         .custom-footer { background-color: #333333; color: #ffffff; padding: 50px 20px 20px 20px; margin-top: 50px; }
         .footer-container { max-width: 1200px; margin: 0 auto; }
         .footer-logo { font-size: 2rem; font-weight: bold; margin-bottom: 20px; font-family: 'Times New Roman', Times, serif; }
@@ -92,30 +69,24 @@
         .btn-pmii { background-color: #ffffff; color: #333333 !important; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; }
         .footer-social { display: flex; gap: 15px; margin-bottom: 20px; font-size: 1.2rem; }
         .footer-copyright { color: #888888; font-size: 0.8rem; }
-
-        @media (max-width: 768px) {
-            .footer-categories { flex-direction: column; gap: 20px; }
-        }
+        @media (max-width: 768px) { .main-header { padding: 16px; } .logo-placeholder { font-size: 1.1rem; } .site-logo { height: 80px; } }
     </style>
 </head>
 <body>
-
     <input type="checkbox" id="menu-toggle">
-
-    <!-- Navigasi dengan penyesuaian ../ karena berada di dalam folder category/ -->
     <aside class="sidebar">
         <label for="menu-toggle" class="close-btn">&#10005;</label>
         <ul class="sidebar-menu">
-            <li><a href="../index.html" class="main-link">Home</a></li>
-            <li><a href="../pengumuman/index.html" class="main-link">Pengumuman</a></li>
+            <li><a href="index.html" class="main-link">Home</a></li>
+            <li><a href="pengumuman/index.html" class="main-link">Pengumuman</a></li>
             <li>
                 <details class="sidebar-dropdown">
                     <summary class="main-link">Kajian <span class="caret">▾</span></summary>
                     <ul class="sidebar-submenu">
-                        <li><a href="pendidikan.html">Pendidikan</a></li>
-                        <li><a href="politik.html">Politik</a></li>
-                        <li><a href="teknologi.html">Teknologi</a></li>
-                        <li><a href="kultur.html">Kultur</a></li>
+                        <li><a href="category/pendidikan.html">Pendidikan</a></li>
+                        <li><a href="category/politik.html">Politik</a></li>
+                        <li><a href="category/teknologi.html">Teknologi</a></li>
+                        <li><a href="category/kultur.html">Kultur</a></li>
                     </ul>
                 </details>
             </li>
@@ -123,11 +94,11 @@
                 <details class="sidebar-dropdown">
                     <summary class="main-link">Tulisan <span class="caret">▾</span></summary>
                     <ul class="sidebar-submenu">
-                        <li><a href="../tulisan/essay/index.html">Essay</a></li>
-                        <li><a href="../tulisan/opini/index.html">Opini</a></li>
-                        <li><a href="../tulisan/cerpen/index.html">Cerpen</a></li>
-                        <li><a href="../tulisan/puisi/index.html">Puisi</a></li>
-                        <li><a href="../tulisan/review-buku/index.html">Review Buku</a></li>
+                        <li><a href="tulisan/essay/index.html">Essay</a></li>
+                        <li><a href="tulisan/opini/index.html">Opini</a></li>
+                        <li><a href="tulisan/cerpen/index.html">Cerpen</a></li>
+                        <li><a href="tulisan/puisi/index.html">Puisi</a></li>
+                        <li><a href="tulisan/review-buku/index.html">Review Buku</a></li>
                     </ul>
                 </details>
             </li>
@@ -135,11 +106,11 @@
                 <details class="sidebar-dropdown">
                     <summary class="main-link">Arsip <span class="caret">▾</span></summary>
                     <ul class="sidebar-submenu">
-                        <li><a href="../arsip/modul/index.html">Modul</a></li>
-                        <li><a href="../arsip/tor/index.html">TOR</a></li>
-                        <li><a href="../arsip/Foto/index.html">Foto</a></li>
-                        <li><a href="../arsip/video/index.html">Video</a></li>
-                        <li><a href="../lainnya/bulletin/index.html">Bulletin</a></li>
+                        <li><a href="arsip/modul/index.html">Modul</a></li>
+                        <li><a href="arsip/tor/index.html">TOR</a></li>
+                        <li><a href="arsip/foto/index.html">Foto</a></li>
+                        <li><a href="arsip/video/index.html">Video</a></li>
+                        <li><a href="lainnya/bulletin/index.html">Bulletin</a></li>
                     </ul>
                 </details>
             </li>
@@ -147,9 +118,9 @@
                 <details class="sidebar-dropdown">
                     <summary class="main-link">Lainnya <span class="caret">▾</span></summary>
                     <ul class="sidebar-submenu">
-                        <li><a href="../lainnya/podcast/index.html">Podcast</a></li>
-                        <li><a href="../lainnya/bedah-buku/index.html">Bedah Buku</a></li>
-                        <li><a href="../lainnya/diskusi/index.html">Diskusi</a></li>
+                        <li><a href="lainnya/podcast/index.html">Podcast</a></li>
+                        <li><a href="lainnya/bedah-buku/index.html">Bedah Buku</a></li>
+                        <li><a href="lainnya/diskusi/index.html">Diskusi</a></li>
                     </ul>
                 </details>
             </li>
@@ -162,7 +133,7 @@
         </div>
 
         <div class="logo-placeholder">
-            <img src="../assets/logo.png" alt="Logo Sekolah Kajian Budaya" class="site-logo">
+            <img src="assets/logo.png" alt="Logo Sekolah Kajian Budaya" class="site-logo">
             <span>SEKOLAH</span>KAJIAN BUDAYA
         </div>
 
@@ -173,35 +144,25 @@
         </div>
     </header>
 
-    <!-- =========================================================
-         KONTEN UTAMA: BENTUK FEED BLOG
-         ========================================================= -->
     <main class="main-content">
-        
-        <div class="section-label">KULTUR</div>
-        
-        <!-- Contoh Feed Artikel 1 (Belum ada isinya, jadi pakai tanda #) -->
+        <div class="section-label">KERJASAMA & PORTOFOLIO</div>
         <article class="bulletin-feed-card">
-            <span class="feed-category">KULTUR</span>
-            <h2 class="feed-title">
-                <a href="#">Coming Soon</a>
-            </h2>
-            <p class="feed-snippet">
-                Coming soon
-            </p>
-            <a href="#" class="feed-readmore">Read More »</a>
+            <span class="feed-category">KERJASAMA</span>
+            <h2 class="feed-title"><a href="mailto:sekolahkajianbudayarayonadab@gmail.com">Undangan Kerjasama</a></h2>
+            <p class="feed-snippet">Halaman ini ditujukan untuk undangan kerjasama seputar kegiatan kebudayaan, literasi, diskusi publik, dokumentasi, dan agenda komunitas. Sekolah Kajian Budaya (sekbud.com) dikelola di bawah naungan Pergerakan Mahasiswa Islam Indonesia Rayon Adab dan Humaniora UIN Sunan Gunung Djati Bandung.</p>
+            <a href="mailto:sekolahkajianbudayarayonadab@gmail.com" class="feed-readmore">Hubungi Tim »</a>
         </article>
-
-        <!-- Contoh Feed Artikel 2 -->
         <article class="bulletin-feed-card">
-            <span class="feed-category">KULTUR</span>
-            <h2 class="feed-title">
-                <a href="#">Coming soon</a>
-            </h2>
-            <p class="feed-snippet">
-                Coming soon
-            </p>
-            <a href="#" class="feed-readmore">Read More »</a>
+            <span class="feed-category">PORTOFOLIO</span>
+            <h2 class="feed-title"><a href="submit.html">Portofolio Kegiatan</a></h2>
+            <p class="feed-snippet">Kami terbuka untuk kolaborasi dalam bentuk liputan kegiatan, publikasi bersama, kelas diskusi, workshop, penerbitan buletin, serta program kerja kebudayaan yang memperluas jejaring gerakan.</p>
+            <a href="submit.html" class="feed-readmore">Lihat Submit Karya »</a>
+        </article>
+        <article class="bulletin-feed-card">
+            <span class="feed-category">KOLABORASI</span>
+            <h2 class="feed-title"><a href="about.html">Arah Kolaborasi</a></h2>
+            <p class="feed-snippet">Jika Anda ingin mengajukan konsep kegiatan, silakan sertakan deskripsi program, tujuan, waktu pelaksanaan, bentuk kontribusi yang diharapkan, dan kontak person agar proses tindak lanjut lebih cepat.</p>
+            <a href="about.html" class="feed-readmore">Tentang Sekbud »</a>
         </article>
 
     </main>
@@ -209,61 +170,61 @@
     <footer class="custom-footer">
         <div class="footer-container">
             <div class="footer-logo">
-                <img src="../assets/logo.png" alt="Logo Sekbud Bawah" style="height: 60px; width: auto;">
+                <img src="assets/logo.png" alt="Logo Sekbud Bawah" style="height: 60px; width: auto;">
             </div>
             <ul class="footer-top-links">
-                <li><a href="#">Tentang Kami</a></li>
-                <li><a href="#">Syarat & Ketentuan</a></li>
-                <li><a href="#">Kontak Kami</a></li>
-                <li><a href="#">Kebijakan Privasi</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="tos.html">Syarat & Ketentuan</a></li>
+                <li><a href="contact.html">Kontak Kami</a></li>
+                <li><a href="privacy.html">Kebijakan Privasi</a></li>
             </ul>
             <div class="footer-categories">
                 <div class="cat-col">
-                    <h4><a href="../index.html" style="color: white; text-decoration: none;">Home</a></h4>
-                    <h4><a href="../pengumuman/index.html" style="color: white; text-decoration: none;">Pengumuman</a></h4>
+                    <h4><a href="index.html" style="color: white; text-decoration: none;">Home</a></h4>
+                    <h4><a href="pengumuman/index.html" style="color: white; text-decoration: none;">Pengumuman</a></h4>
                 </div>
                 <div class="cat-col">
                     <h4>Kajian</h4>
                     <ul>
-                        <li><a href="pendidikan.html">Pendidikan</a></li>
-                        <li><a href="politik.html">Politik</a></li>
-                        <li><a href="teknologi.html">Teknologi</a></li>
-                        <li><a href="kultur.html">Kultur</a></li>
+                        <li><a href="category/pendidikan.html">Pendidikan</a></li>
+                        <li><a href="category/politik.html">Politik</a></li>
+                        <li><a href="category/teknologi.html">Teknologi</a></li>
+                        <li><a href="category/kultur.html">Kultur</a></li>
                     </ul>
                 </div>
                 <div class="cat-col">
                     <h4>Tulisan</h4>
                     <ul>
-                        <li><a href="../tulisan/essay/index.html">1. Essay</a></li>
-                        <li><a href="../tulisan/opini/index.html">2. Opini</a></li>
-                        <li><a href="../tulisan/cerpen/index.html">3. Cerpen</a></li>
-                        <li><a href="../tulisan/puisi/index.html">4. Puisi</a></li>
-                        <li><a href="../tulisan/review-buku/index.html">5. Review Buku</a></li>
+                        <li><a href="tulisan/essay/index.html">1. Essay</a></li>
+                        <li><a href="tulisan/opini/index.html">2. Opini</a></li>
+                        <li><a href="tulisan/cerpen/index.html">3. Cerpen</a></li>
+                        <li><a href="tulisan/puisi/index.html">4. Puisi</a></li>
+                        <li><a href="tulisan/review-buku/index.html">5. Review Buku</a></li>
                     </ul>
                 </div>
                 <div class="cat-col">
                     <h4>Arsip</h4>
                     <ul>
-                        <li><a href="../arsip/modul/index.html">1. Modul</a></li>
-                        <li><a href="../Arsip/TOR/index.html">2. TOR</a></li>
-                        <li><a href="../arsip/foto/index.html">3. Foto</a></li>
-                        <li><a href="../arsip/video/index.html">4. Vidio</a></li>
+                        <li><a href="arsip/modul/index.html">1. Modul</a></li>
+                        <li><a href="arsip/tor/index.html">2. TOR</a></li>
+                        <li><a href="arsip/foto/index.html">3. Foto</a></li>
+                        <li><a href="arsip/video/index.html">4. Vidio</a></li>
                     </ul>
                 </div>
                 <div class="cat-col">
-                    <h4>Lainya</h4>
+                    <h4>Lainnya</h4>
                     <ul>
-                        <li><a href="../lainnya/podcast/index.html">1. Podcast</a></li>
-                        <li><a href="../lainnya/bedah-buku/index.html">2. Bedah Buku</a></li>
-                        <li><a href="../lainnya/diskusi/index.html">3. Diskusi</a></li>
+                        <li><a href="lainnya/podcast/index.html">1. Podcast</a></li>
+                        <li><a href="lainnya/bedah-buku/index.html">2. Bedah Buku</a></li>
+                        <li><a href="lainnya/diskusi/index.html">3. Diskusi</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom-links">
-                <a href="#">Kerjasama & Portofolio</a>
-                <a href="#">Undangan Menulis</a>
-                <a href="#">Premium</a>
-                <a href="#">Youtube</a>
+                <a href="kerjasama.html">Kerjasama & Portofolio</a>
+                <a href="submit.html">Undangan Menulis</a>
+                <a href="donate.html">Premium</a>
+                <a href="https://www.youtube.com/@pmiiadhumchanel5809">Youtube</a>
                 <a href="#" class="btn-pmii">PMII ADHUM</a>
             </div>
             <div class="footer-social">
@@ -274,6 +235,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
